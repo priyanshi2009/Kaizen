@@ -1,0 +1,24 @@
+<head>
+  <!-- this should be set to your own payment pointer -->
+  <meta name="monetization" content="$wallet.example.com/alice" />
+
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <script>
+    if (document.monetization) {
+      document.monetization.addEventListener('monetizationstart', () => {
+        document.getElementById('exclusive').classList.remove('hidden')
+      })
+    }
+  </script>
+</head>
+
+<body>
+  <p>Content will appear below here if you are Web monetized.</p>
+  <hr />
+  <div id="exclusive" class="hidden">Here's some exclusive content!</div>
+</body>
